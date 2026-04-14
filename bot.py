@@ -3,13 +3,14 @@ import os
 import discord 
 from discord import app_commands 
 from dotenv import load_dotenv
-
+from keep_alive import keep_alive
 
 load_dotenv() 
 
 
 TOKEN = os.getenv("DISCORD_TOKEN") 
 
+keep_alive()
 
 class MyClient(discord.Client): 
     def __init__(self): 
