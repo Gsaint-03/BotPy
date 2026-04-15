@@ -52,6 +52,8 @@ async def battleTime(interaction: discord.Interaction):
 
     if today == 0 or  today == 2:
         battleTime = "# No battle today! ): \n\n@everyone" 
+        await interaction.response.send_message( battleTime ,allowed_mentions=discord.AllowedMentions(everyone=True), delete_after=120)
+        return 
 
     else:
 
