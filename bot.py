@@ -62,6 +62,11 @@ async def battleTime(interaction: discord.Interaction):
     await interaction.response.send_message( f"# BATTLE AT: {battleTime}!\n WHOS GONNA JOIN?\n\n@everyone" ,allowed_mentions=discord.AllowedMentions(everyone=True), delete_after=120) 
 
 
+@client.tree.command( name="battle_code", description="Prints out the code deployment message" )
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+@app_commands.allowed_installs(guilds=True, users=True) 
+async def battleCode(interaction: discord.Interaction, code: str): 
+    await interaction.response.send_message( f"# ⚔️ **BATTLE TIME!** ⚔️\n\n## *CODE:*\n```{code}```\n@everyone" ,allowed_mentions=discord.AllowedMentions(everyone=True), delete_after=120)
 
 
 client.run(TOKEN)
